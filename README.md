@@ -6,6 +6,20 @@ This PHP console application allows you to manage a shopping list stored in a fi
 
 ### Commands
 
+#### Show All Data
+
+To show all data of the shopping list, use the `showList` command:
+
+```php
+php index.php data.txt showList
+```
+
+Example:
+
+```php
+php index.php data.txt showList
+```
+
 #### Add an Item
 
 To add an item to the shopping list, use the `add` command:
