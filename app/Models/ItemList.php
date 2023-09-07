@@ -58,11 +58,6 @@ class ItemList
         return $total;
     }
 
-    public function getItems()
-    {
-        return $this->items;
-    }
-
     public function displayItems()
     {
         foreach ($this->items as $item) {
