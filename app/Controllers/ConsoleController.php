@@ -1,4 +1,5 @@
 <?php
+
 class ConsoleController
 {
     private $itemController;
@@ -30,6 +31,10 @@ class ConsoleController
             case 'subtract':
                 $total = $this->itemController->getTotal();
                 echo "Общая сумма товаров: $total" . PHP_EOL;
+                break;
+            case 'showList':
+                echo "Текущий список товаров:" . PHP_EOL;
+                $this->itemController->displayItems();
                 break;
             default:
                 echo "Неправильное действие." . PHP_EOL;
