@@ -1,4 +1,5 @@
 <?php
+
 class ItemList
 {
     private $items = [];
@@ -26,8 +27,20 @@ class ItemList
 
     public function addItem(Item $item)
     {
+        $itemName = $item->getName();
+
+        foreach ($this->items as $existingItem) {
+            if ($existingItem->getName() === $itemName) {
+                echo "Товар: $itemName уже существует. Не удалось добавить его." . PHP_EOL;
+                return;
+            }
+        }
+
+        echo "Товар: {$item->getName()} было добавлено с ценой {$item->getPrice()}" . PHP_EOL;
+
         $this->items[] = $item;
     }
+
 
     public function editItem($name, $newPrice)
     {
@@ -37,6 +50,7 @@ class ItemList
                 break;
             }
         }
+        echo "Цена Товара: $name  было обновлено на: $newPrice" . PHP_EOL;
     }
 
     public function deleteItem($name)
@@ -47,6 +61,7 @@ class ItemList
                 break;
             }
         }
+        echo "Товар: $name  был удален" . PHP_EOL;
     }
 
     public function getTotalPrice()
