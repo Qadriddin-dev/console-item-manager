@@ -1,15 +1,17 @@
 <?php
-require_once 'app/Controllers/ItemController.php';
-require_once 'app/Controllers/ConsoleController.php';
-require_once 'app/Models/Item.php';
-require_once 'app/Models/ItemList.php';
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+use ConsoleItemManager\App\Controllers\ConsoleController;
+use ConsoleItemManager\App\Controllers\ItemController;
+use ConsoleItemManager\App\Models\ItemList;
 
 if ($argc < 3) {
     echo "Использование: php index.php <файл> <действие> [аргументы]\n";
     exit(1);
 }
 
-$filename = 'data/' . $argv[1];
+$filename = 'src/data/' . $argv[1];
 $action = $argv[2];
 $args = array_slice($argv, 3);
 

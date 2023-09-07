@@ -1,4 +1,7 @@
 <?php
+
+namespace ConsoleItemManager\App\Models;
+
 class Item
 {
     private $name;

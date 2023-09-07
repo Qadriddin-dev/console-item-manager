@@ -1,0 +1,15 @@
+{
+    "name": "qadriddin/console-item-manager",
+    "autoload": {
+        "psr-4": {
+            "ConsoleItemManager\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Qadriddin",
+            "email": "qadrdin81@gmail.com"
+        }
+    ],
+    "require": {}
+}

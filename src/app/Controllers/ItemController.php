@@ -1,4 +1,9 @@
 <?php
+
+namespace ConsoleItemManager\App\Controllers;
+use ConsoleItemManager\App\Models\Item;
+use ConsoleItemManager\App\Models\ItemList;
+
 class ItemController
 {
     private $itemList;

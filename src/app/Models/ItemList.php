@@ -1,5 +1,7 @@
 <?php
 
+namespace ConsoleItemManager\App\Models;
+
 class ItemList
 {
     private $items = [];
