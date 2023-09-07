@@ -31,7 +31,7 @@ class ItemList
 
         foreach ($this->items as $existingItem) {
             if ($existingItem->getName() === $itemName) {
-                echo "Товар: $itemName уже существует. Не удалось добавить его." . PHP_EOL;
+                echo "Товар: $itemName уже существует. Не удалось добавить товар" . PHP_EOL;
                 return;
             }
         }
