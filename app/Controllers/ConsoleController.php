@@ -18,15 +18,12 @@ class ConsoleController
         switch ($action) {
             case 'add':
                 $this->itemController->add($args[0], $args[1]);
-                echo "Товар: $args[0]  было добавлено с ценной: $args[1]" . PHP_EOL;
                 break;
             case 'edit':
                 $this->itemController->edit($args[0], $args[1]);
-                echo "Цена Товара: $args[0]  было обновлено на: $args[1]" . PHP_EOL;
                 break;
             case 'delete':
                 $this->itemController->delete($args[0]);
-                echo "Товар: $args[0]  был удален" . PHP_EOL;
                 break;
             case 'subtract':
                 $total = $this->itemController->getTotal();
