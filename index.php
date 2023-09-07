@@ -18,6 +18,3 @@ $itemController = new ItemController($itemList);
 $consoleController = new ConsoleController($itemController, $itemList);
 $consoleController->execute($filename, $action, $args);
 
-echo "Текущий список товаров:" . PHP_EOL;
-$itemController->displayItems();
-
