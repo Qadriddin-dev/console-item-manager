@@ -3,7 +3,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use ConsoleItemManager\App\Controllers\ConsoleController;
-use ConsoleItemManager\App\Controllers\ItemController;
+use ConsoleItemManager\App\Controllers\ProductManager;
 use ConsoleItemManager\App\Models\ItemList;
 
 if ($argc < 3) {
@@ -16,7 +16,7 @@ $action = $argv[2];
 $args = array_slice($argv, 3);
 
 $itemList = new ItemList();
-$itemController = new ItemController($itemList);
-$consoleController = new ConsoleController($itemController, $itemList);
+$productManager = new ProductManager($itemList);
+$consoleController = new ConsoleController($productManager, $itemList);
 $consoleController->execute($filename, $action, $args);
 

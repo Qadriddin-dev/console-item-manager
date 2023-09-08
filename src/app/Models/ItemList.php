@@ -4,9 +4,9 @@ namespace ConsoleItemManager\App\Models;
 
 class ItemList
 {
-    private $items = [];
+    private array $items = [];
 
-    public function loadItemsFromFile($filename)
+    public function loadItemsFromFile(string $filename): void
     {
         if (file_exists($filename)) {
             $lines = file($filename, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
@@ -18,7 +18,7 @@ class ItemList
         }
     }
 
-    public function saveItemsToFile($filename)
+    public function saveItemsToFile(string $filename): void
     {
         $lines = [];
         foreach ($this->items as $item) {
@@ -27,7 +27,7 @@ class ItemList
         file_put_contents($filename, implode(PHP_EOL, $lines));
     }
 
-    public function addItem(Item $item)
+    public function addItem(Item $item): void
     {
         $itemName = $item->getName();
 
@@ -43,8 +43,7 @@ class ItemList
         $this->items[] = $item;
     }
 
-
-    public function editItem($name, $newPrice)
+    public function editItem(string $name, int $newPrice): void
     {
         foreach ($this->items as $item) {
             if ($item->getName() === $name) {
@@ -55,7 +54,7 @@ class ItemList
         echo "Цена Товара: $name  было обновлено на: $newPrice" . PHP_EOL;
     }
 
-    public function deleteItem($name)
+    public function deleteItem(string $name): void
     {
         foreach ($this->items as $key => $item) {
             if ($item->getName() === $name) {
@@ -66,7 +65,7 @@ class ItemList
         echo "Товар: $name  был удален" . PHP_EOL;
     }
 
-    public function getTotalPrice()
+    public function getTotalPrice(): int
     {
         $total = 0;
         foreach ($this->items as $item) {
@@ -75,7 +74,7 @@ class ItemList
         return $total;
     }
 
-    public function displayItems()
+    public function displayItems(): void
     {
         foreach ($this->items as $item) {
             echo $item->getName() . ' — ' . $item->getPrice() . PHP_EOL;

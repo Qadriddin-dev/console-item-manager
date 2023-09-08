@@ -4,26 +4,22 @@ namespace ConsoleItemManager\App\Models;
 
 class Item
 {
-    private $name;
-    private $price;
+    public function __construct(
+        private string $name,
+        private int $price
+    ) {}
 
-    public function __construct($name, $price)
-    {
-        $this->name = $name;
-        $this->price = $price;
-    }
-
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function getPrice()
+    public function getPrice(): int
     {
         return $this->price;
     }
 
-    public function setPrice($price)
+    public function setPrice(int $price): void
     {
         $this->price = $price;
     }

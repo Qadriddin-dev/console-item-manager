@@ -1,40 +1,38 @@
 <?php
 
 namespace ConsoleItemManager\App\Controllers;
+
 use ConsoleItemManager\App\Models\Item;
 use ConsoleItemManager\App\Models\ItemList;
 
-class ItemController
+class ProductManager
 {
-    private $itemList;
+    public function __construct(
+        private ItemList $itemList
+    ){}
 
-    public function __construct(ItemList $itemList)
-    {
-        $this->itemList = $itemList;
-    }
-
-    public function add($name, $price)
+    public function add(string $name, int $price): void
     {
         $item = new Item($name, $price);
         $this->itemList->addItem($item);
     }
 
-    public function edit($name, $newPrice)
+    public function edit(string $name, int $newPrice): void
     {
         $this->itemList->editItem($name, $newPrice);
     }
 
-    public function delete($name)
+    public function delete(string $name): void
     {
         $this->itemList->deleteItem($name);
     }
 
-    public function getTotal()
+    public function getTotal(): int
     {
         return $this->itemList->getTotalPrice();
     }
 
-    public function displayItems()
+    public function displayItems(): void
     {
         $this->itemList->displayItems();
     }
