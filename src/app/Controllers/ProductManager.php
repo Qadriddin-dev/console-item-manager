@@ -1,9 +1,9 @@
 <?php
 
-namespace ConsoleItemManager\App\Controllers;
+namespace ConsoleItemManager\Controllers;
 
-use ConsoleItemManager\App\Models\Item;
-use ConsoleItemManager\App\Models\ItemList;
+use ConsoleItemManager\Models\Item;
+use ConsoleItemManager\Models\ItemList;
 
 class ProductManager
 {

@@ -2,7 +2,7 @@
     "name": "qadriddin/console-item-manager",
     "autoload": {
         "psr-4": {
-            "ConsoleItemManager\\": "src/"
+            "ConsoleItemManager\\": "src/app"
         }
     },
     "authors": [

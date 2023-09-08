@@ -1,6 +1,6 @@
 <?php
 
-namespace ConsoleItemManager\App\Models;
+namespace ConsoleItemManager\Models;
 
 class Item
 {

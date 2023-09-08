@@ -2,9 +2,9 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use ConsoleItemManager\App\Controllers\ConsoleController;
-use ConsoleItemManager\App\Controllers\ProductManager;
-use ConsoleItemManager\App\Models\ItemList;
+use ConsoleItemManager\Controllers\ConsoleController;
+use ConsoleItemManager\Controllers\ProductManager;
+use ConsoleItemManager\Models\ItemList;
 
 if ($argc < 3) {
     echo "Использование: php index.php <файл> <действие> [аргументы]\n";
